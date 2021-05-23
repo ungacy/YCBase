@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.1.0)
+  - YCBase (0.1.0):
+    - Masonry
+
+DEPENDENCIES:
+  - YCBase (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  YCBase:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YCBase: a6916ef22260b40e76c5c565bde9fa0876f7d847
+
+PODFILE CHECKSUM: 9e59333420cd7c87901ebed5294a5013123035a1
+
+COCOAPODS: 1.10.1
