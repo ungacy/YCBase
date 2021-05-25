@@ -72,7 +72,6 @@ platform :ios do
       path: "./#{lib_name}.podspec",
       allow_warnings: true,
       use_libraries: true,
-      sources: ['https://github.com/CocoaPods/Specs.git']
     )
     if quick
       sh "sed -i '' 's/  #validate_podspec_files/  validate_podspec_files/g' #{ruby_path}/gems/cocoapods-#{pod_version}/lib/cocoapods/command/repo/push.rb"
