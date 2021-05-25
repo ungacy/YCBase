@@ -10,8 +10,8 @@
 #define YCBase_h
 
 #import "YCItem.h"
-#import "YCViewController.h"
-#import "YCTableViewController.h"
 #import "YCNavigationController.h"
+#import "YCTableViewController.h"
+#import "YCViewController.h"
 
 #endif /* YCBase_h */

@@ -178,6 +178,7 @@
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:selector];
+    item.tintColor = [UIColor labelColor];
     return item;
 }
 
@@ -186,6 +187,7 @@
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:selector];
+    item.tintColor = [UIColor labelColor];
     return item;
 }
 

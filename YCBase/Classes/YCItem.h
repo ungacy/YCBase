@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *identifier;
 
-
 #pragma mark - Index
 
 @property (nonatomic, assign) NSInteger section;

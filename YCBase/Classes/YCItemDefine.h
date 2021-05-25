@@ -24,7 +24,7 @@
 
 @property (nonatomic, copy) void (^actionBlock)(id action);
 
-- (void)reloadWithData:(id <YCItemProtocol>)data;
+- (void)reloadWithData:(id<YCItemProtocol>)data;
 
 @end
 

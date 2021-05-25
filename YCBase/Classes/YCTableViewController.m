@@ -7,8 +7,8 @@
 //
 
 #import "YCTableViewController.h"
-#import <Masonry/Masonry.h>
 #import "YCItem.h"
+#import <Masonry/Masonry.h>
 
 @interface YCTableViewController ()
 
@@ -53,7 +53,6 @@
     //self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
     self.tableView.backgroundColor = [UIColor whiteColor];
 }
-
 
 #pragma mark - Cell
 
