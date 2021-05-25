@@ -71,7 +71,6 @@ platform :ios do
     pod_push(
       path: "./#{lib_name}.podspec",
       allow_warnings: true,
-      repo: 'SISpecs',
       use_libraries: true,
       sources: ['https://github.com/CocoaPods/Specs.git']
     )
