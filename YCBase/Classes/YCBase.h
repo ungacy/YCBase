@@ -9,7 +9,6 @@
 #ifndef YCBase_h
 #define YCBase_h
 
-#import "YCItem.h"
 #import "YCNavigationController.h"
 #import "YCTableViewController.h"
 #import "YCViewController.h"
