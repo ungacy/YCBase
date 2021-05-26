@@ -7,7 +7,7 @@
 //
 
 #import "YCTableViewController.h"
-#import "YCItem.h"
+#import "YCItemDefine.h"
 #import <Masonry/Masonry.h>
 
 @interface YCTableViewController ()

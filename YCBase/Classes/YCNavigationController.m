@@ -24,10 +24,6 @@
 @implementation YCNavigationController
 
 - (void)setGlobalUI {
-    [self.navigationBar setBarTintColor:[UIColor systemBackgroundColor]];
-    [self.navigationBar setBackgroundColor:[UIColor systemBackgroundColor]];
-    [self.navigationBar setBackIndicatorImage:[UIImage imageNamed:@"ic_back_chevron"]];
-    [self.navigationBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"ic_back_chevron"]];
     if (@available(iOS 11.0, *)) {
         //do nothing
         //SIDLog(@"remove sonar warning");
