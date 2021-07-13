@@ -38,8 +38,6 @@
 
 #pragma mark - NavigationBar
 
-@property (nonatomic, assign) BOOL hideNavigationBarLine;
-
 @property (nonatomic, assign) BOOL hideNavigationBar;
 
 #pragma mark - TabBar
@@ -57,6 +55,8 @@
 @interface YCViewController (YCNavi)
 
 - (UIBarButtonItem *)barItemWithTitle:(NSString *)title selector:(SEL)selector;
+
+- (UIBarButtonItem *)barItemWithImage:(UIImage *)image selector:(SEL)selector;
 
 - (UIBarButtonItem *)barItemWithIcon:(NSString *)icon selector:(SEL)selector;
 

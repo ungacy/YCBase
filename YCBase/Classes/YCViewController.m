@@ -54,9 +54,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.yc_viewAppeared = YES;
-    if (_hideNavigationBarLine) {
-        [self showNavigationBarLine:NO];
-    }
     [self navigationBarHandler];
 }
 
@@ -72,21 +69,10 @@
     }
 }
 
-- (void)showNavigationBarLine:(BOOL)show {
-    if (![self.parentViewController isKindOfClass:[YCNavigationController class]]) {
-        return;
-    }
-    UIImageView *line = self.navigationController.navigationBar.subviews.firstObject.subviews.firstObject;
-    line.hidden = !show;
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.yc_viewAppeared = NO;
     [self.view endEditing:YES];
-    if (_hideNavigationBarLine) {
-        [self showNavigationBarLine:YES];
-    }
 }
 
 - (void)loadData {
@@ -136,11 +122,6 @@
     }
 }
 
-- (void)setHideNavigationBarLine:(BOOL)hideNavigationBarLine {
-    _hideNavigationBarLine = hideNavigationBarLine;
-    [self showNavigationBarLine:!hideNavigationBarLine];
-}
-
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
 }
@@ -175,6 +156,14 @@
 
 - (UIBarButtonItem *)barItemWithTitle:(NSString *)title selector:(SEL)selector {
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:selector];
+    return item;
+}
+
+- (UIBarButtonItem *)barItemWithImage:(UIImage *)image selector:(SEL)selector {
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:selector];
