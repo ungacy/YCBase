@@ -38,7 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self navigationBarHandler];
-    self.navigationController.navigationBar.translucent = YES;
     [self defaultUI];
     // Do any additional setup after loading the view.
 }
@@ -55,18 +54,18 @@
     [super viewWillAppear:animated];
     self.yc_viewAppeared = YES;
     [self navigationBarHandler];
+    if (_noReloadOnce) {
+        _noReloadOnce = NO;
+        return;
+    }
+    if (_reloadWhenAppear || _reloadOnce) {
+        [self loadData];
+        _reloadOnce = NO;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (_noReloadOnce) {
-        _noReloadOnce = NO;
-    } else {
-        if (_reloadWhenAppear || _reloadOnce) {
-            [self loadData];
-            _reloadOnce = NO;
-        }
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
