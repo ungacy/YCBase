@@ -61,7 +61,7 @@
 		77B23B7C5385DBAD83839A78 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		975622E8B51D0C794BA88D90 /* Pods_YCBase_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YCBase_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D4B94967E7F7D374CAE2A08 /* YCBase.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YCBase.podspec; path = ../YCBase.podspec; sourceTree = "<group>"; };
+		9D4B94967E7F7D374CAE2A08 /* YCBase.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YCBase.podspec; path = ../YCBase.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F3788D28C819F9E5E6744B4F /* Pods-YCBase_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YCBase_Example.release.xcconfig"; path = "Target Support Files/Pods-YCBase_Example/Pods-YCBase_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
