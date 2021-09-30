@@ -7,6 +7,7 @@
 //
 
 #import "YCTableViewController.h"
+#import "Availability.h"
 #import "YCItemDefine.h"
 #import <Masonry/Masonry.h>
 
@@ -227,6 +228,11 @@
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(self.view);
         }];
+#ifdef __IPHONE_15_0
+        if (@available(iOS 15.0, *)) {
+            _tableView.sectionHeaderTopPadding = 0;
+        }
+#endif
         if (self.cellClassArray) {
             self.cellClassArray = self.cellClassArray;
         } else if (self.cellClass) {

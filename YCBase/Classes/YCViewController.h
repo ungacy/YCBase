@@ -40,11 +40,13 @@
 
 @property (nonatomic, assign) BOOL hideNavigationBar;
 
+@property (nonatomic, strong) UIColor *navigationBarBackgroundColor;
+
 #pragma mark - TabBar
 
 @property (nonatomic, assign) BOOL alwaysShowTabBar;
 
-#pragma mark - Appeared
+#pragma mark - Life Cycle
 
 @property (nonatomic, readonly) BOOL yc_viewAppeared;
 

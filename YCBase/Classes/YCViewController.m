@@ -20,6 +20,8 @@
 
 @property (nonatomic, assign) BOOL yc_viewAppeared;
 
+@property (nonatomic, strong) UIColor *yc_previousNaviColor;
+
 @end
 
 @implementation YCViewController
@@ -50,8 +52,38 @@
     }
 }
 
+- (void)changeNavigationBarColor {
+    if (!self.navigationBarBackgroundColor) {
+        return;
+    }
+    self.yc_previousNaviColor = self.yc_previousNaviColor ?: self.navigationController.navigationBar.barTintColor;
+    self.navigationController.navigationBar.backgroundColor = self.navigationBarBackgroundColor;
+    self.navigationController.navigationBar.barTintColor = self.navigationBarBackgroundColor;
+    if (@available(iOS 13, *)) {
+        UINavigationBarAppearance *navBar = self.navigationController.navigationBar.standardAppearance;
+        navBar.backgroundColor = self.navigationBarBackgroundColor;
+        self.navigationController.navigationBar.standardAppearance = navBar;
+        self.navigationController.navigationBar.scrollEdgeAppearance = navBar;
+    }
+}
+
+- (void)restoreNavigationBarColor {
+    if (!self.navigationBarBackgroundColor) {
+        return;
+    }
+    self.navigationController.navigationBar.backgroundColor = self.yc_previousNaviColor;
+    self.navigationController.navigationBar.barTintColor = self.yc_previousNaviColor;
+    if (@available(iOS 13, *)) {
+        UINavigationBarAppearance *navBar = self.navigationController.navigationBar.standardAppearance;
+        navBar.backgroundColor = self.yc_previousNaviColor;
+        self.navigationController.navigationBar.standardAppearance = navBar;
+        self.navigationController.navigationBar.scrollEdgeAppearance = navBar;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self changeNavigationBarColor];
     self.yc_viewAppeared = YES;
     [self navigationBarHandler];
     if (_noReloadOnce) {
@@ -72,6 +104,7 @@
     [super viewWillDisappear:animated];
     self.yc_viewAppeared = NO;
     [self.view endEditing:YES];
+    [self restoreNavigationBarColor];
 }
 
 - (void)loadData {
@@ -80,13 +113,13 @@
 - (void)defaultUI {
     self.view.backgroundColor = [UIColor whiteColor];
     if (self.navigationController.isBeingPresented) {
-        self.navigationItem.leftBarButtonItem = [self barItemWithIcon:@"ic_back_chevron" selector:@selector(goBack)];
+        self.navigationItem.leftBarButtonItem = [self barItemWithImage:self.navigationController.navigationBar.backIndicatorImage selector:@selector(goBack)];
         return;
     }
     NSArray *viewControllers = self.navigationController.viewControllers;
     if (viewControllers.count > 1 && viewControllers.lastObject == self) {
         self.navigationItem.hidesBackButton = YES;
-        self.navigationItem.leftBarButtonItem = [self barItemWithIcon:@"ic_back_chevron" selector:@selector(goBack)];
+        self.navigationItem.leftBarButtonItem = [self barItemWithImage:self.navigationController.navigationBar.backIndicatorImage selector:@selector(goBack)];
         //修复navigationController侧滑关闭失效的问题
         self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     }
