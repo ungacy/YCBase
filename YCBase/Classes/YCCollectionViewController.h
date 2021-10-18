@@ -27,6 +27,8 @@
 
 - (void)silenceReloadAtIndexPath:(NSIndexPath *)indexPath;
 
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath;
+
 - (void)action:(id)action atIndexPath:(NSIndexPath *)indexPath;
 
 - (void)reloadData;
