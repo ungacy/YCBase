@@ -63,7 +63,7 @@
     }
     if (YCBaseVC && source.killWhenPushed) {
         NSMutableArray *viewControllers = self.viewControllers.mutableCopy;
-        if (viewControllers.count > 1) {
+        if (viewControllers.count >= 1) {
             [viewControllers removeLastObject];
         }
         [viewControllers addObject:viewController];
