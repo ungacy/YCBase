@@ -40,7 +40,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self navigationBarHandler];
-    [self defaultUI];
     // Do any additional setup after loading the view.
 }
 
@@ -108,21 +107,6 @@
 }
 
 - (void)loadData {
-}
-
-- (void)defaultUI {
-    self.view.backgroundColor = [UIColor whiteColor];
-    if (self.navigationController.isBeingPresented) {
-        self.navigationItem.leftBarButtonItem = [self barItemWithImage:self.navigationController.navigationBar.backIndicatorImage selector:@selector(goBack)];
-        return;
-    }
-    NSArray *viewControllers = self.navigationController.viewControllers;
-    if (viewControllers.count > 1 && viewControllers.lastObject == self) {
-        self.navigationItem.hidesBackButton = YES;
-        self.navigationItem.leftBarButtonItem = [self barItemWithImage:self.navigationController.navigationBar.backIndicatorImage selector:@selector(goBack)];
-        //修复navigationController侧滑关闭失效的问题
-        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
-    }
 }
 
 - (void)goBack {
